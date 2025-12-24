@@ -1,0 +1,16 @@
+body {
+    font-family: Arial;
+    text-align: center;
+}
+
+input {
+    margin: 5px;
+    padding: 8px;
+}
+select {
+    padding: 8px;
+    margin: 5px;
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}

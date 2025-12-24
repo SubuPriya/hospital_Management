@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+</head>
+
+<style>
+    body {
+        font-family: "Segoe UI", Arial, sans-serif;
+        background-color: #f2f6fa;
+        margin: 0;
+        padding: 20px;
+        text-align: center;
+    }
+
+    h2 {
+        color: #2c3e50;
+        margin-bottom: 10px;
+    }
+
+    h3 {
+        color: #34495e;
+        margin-top: 30px;
+    }
+
+    button {
+        padding: 8px 14px;
+        margin: 5px;
+        border: none;
+        border-radius: 4px;
+        background-color: #3B7A99;
+        color: white;
+        font-size: 14px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #2980b9;
+    }
+
+    input {
+        padding: 8px;
+        margin: 5px;
+        width: 180px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    input:focus {
+        border-color: #3498db;
+        outline: none;
+    }
+
+    table {
+        margin: 15px auto;
+        border-collapse: collapse;
+        width: 90%;
+        background-color: white;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    th {
+        background-color: #0D3B66;
+        color: white;
+        padding: 10px;
+    }
+
+    td {
+        padding: 8px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    tr:hover {
+        background-color: #f1f1f1;
+    }
+
+    .panel {
+        background: white;
+        padding: 20px;
+        margin: 20px auto;
+        width: 95%;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .logout-btn {
+        padding: 8px 14px;
+        background-color: #e74c3c;
+        float: right;
+    }
+
+    .logout-btn:hover {
+        background-color: #c0392b;
+    }
+
+    select {
+    padding: 8px;
+    margin: 5px;
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+</style>
+
+<body>
+
+<h2 id="roleTitle"></h2>
+<button class="logout-btn" onclick="logout()">Logout</button>
+
+<!-- ADMIN PANEL -->
+<div id="adminPanel" class="panel" style="display:none;">
+    <h3>Doctor Management</h3>
+
+    <input id="dname" placeholder="Doctor Name">
+    <input id="dept" placeholder="Department">
+    <input id="phone" placeholder="Phone"><br>
+
+    <button onclick="addDoctor()">Add</button>
+    <button onclick="updateDoctor()">Update</button>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th><th>Name</th><th>Dept</th><th>Phone</th><th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="doctorTable"></tbody>
+    </table>
+</div>
+
+<!-- PATIENT PANEL -->
+<div class="panel">
+    <h3>Patient Management</h3>
+
+    <input type="hidden" id="pid">
+    <input id="pname" placeholder="Patient Name">
+    <input id="age" placeholder="Age">
+    <input id="gender" placeholder="Gender">
+    <input id="disease" placeholder="Disease"><br>
+<select id="doctorName">
+    <option value="">Select Doctor</option>
+</select>
+
+    <button onclick="addPatient()">Add</button>
+    <button onclick="updatePatient()">Update</button>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th><th>Name</th><th>Age</th>
+                <th>Gender</th><th>Disease</th><th>Doctor</th><th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="patientTable"></tbody>
+    </table>
+</div>
+
+<script src="renderer.js"></script>
+</body>
+</html>

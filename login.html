@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hospital Login</title>
+</head>
+
+<style>
+    body {
+        font-family: "Segoe UI", Arial, sans-serif;
+        background-color: #f2f6fa;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .login-box {
+        background: #ffffff;
+        padding: 30px 40px;
+        width: 320px;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+
+    h2 {
+        margin-bottom: 20px;
+        color: #2c3e50;
+    }
+
+    input {
+        width: 100%;
+        padding: 10px;
+        margin: 8px 0;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 14px;
+    }
+
+    input:focus {
+        border-color: #3498db;
+        outline: none;
+    }
+
+    button {
+        width: 100%;
+        padding: 10px;
+        margin-top: 15px;
+        background-color: #3498db;
+        border: none;
+        color: white;
+        font-size: 15px;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #2980b9;
+    }
+
+    .footer-text {
+        margin-top: 15px;
+        font-size: 12px;
+        color: #888;
+    }
+    .logo-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-box img {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+}
+</style>
+
+<body>
+
+    <div class="login-box">
+        
+        <div class="header">
+            <div class="logo-box">
+                <img src="Logo.png" >
+            <h2>Hospital Login</h2>
+            </div>
+        
+
+        <input type="text" id="username" placeholder="Username">
+        <input type="password" id="password" placeholder="Password">
+
+        <button onclick="login()">Login</button>
+</div>
+        <div class="footer-text">
+            © 2025 Hospital Management
+        </div>
+    </div>
+
+    <script src="renderer.js"></script>
+</body>
+</html>
